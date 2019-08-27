@@ -271,4 +271,8 @@
         <exclude name="Zend.NamingConventions.ValidVariableName.StringVarContainsNumbers"/>
         <exclude name="Zend.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
     </rule>
+
+    <rule ref="Squiz.Commenting.BlockComment">
+        <exclude-pattern>*/config/*</exclude-pattern>
+    </rule>
 </ruleset>

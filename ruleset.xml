@@ -1,15 +1,16 @@
 <?xml version="1.0"?>
 <ruleset name="SmartVitaal code style" namespace="smartvitaal/php-codesniffer-ruleset">
-    <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
+     <config name="installed_paths" value="vendor/slevomat/coding-standard"/>
 
-    <!--Arguments-->
+    <!-- Arguments -->
 
     <arg name="parallel" value="75"/>
     <arg value="wp"/>
     <arg name="colors"/>
     <arg name="report" value="full"/>
+    <arg name="tab-width" value="4"/>
 
-    <!--Rulesets-->
+    <!-- Rulesets -->
 
     <rule ref="PEAR">
         <exclude name="Generic.Commenting.DocComment.MissingShort"/>
@@ -90,7 +91,7 @@
         <exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing.Before"/>
     </rule>
 
-    <!--Individual rules-->
+    <!-- Individual rules -->
 
     <rule ref="Generic.Classes.DuplicateClassName"/>
     <rule ref="Generic.CodeAnalysis.EmptyStatement"/>
@@ -107,7 +108,6 @@
     <rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
     <rule ref="SlevomatCodingStandard.Commenting.InlineDocCommentDeclaration"/>
     <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment"/>
-    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEmpty"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.NewWithoutParentheses"/>
     <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator"/>
@@ -133,15 +133,16 @@
     <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing"/>
     <rule ref="SlevomatCodingStandard.Variables.UselessVariable"/>
     <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+    <rule ref="Squiz.Commenting.FunctionComment.IncorrectTypeHint"/>
     <rule ref="Squiz.ControlStructures.ElseIfDeclaration"/>
     <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
     <rule ref="Squiz.Strings.DoubleQuoteUsage.ContainsVar"/>
     <rule ref="Squiz.WhiteSpace.ControlStructureSpacing"/>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
 
-    <!--Rule configuration-->
+    <!-- Rules with configuration -->
 
-    <!--The testing bootstrap file uses string concatenations to stop IDEs seeing the class aliases-->
+    <!-- The testing bootstrap file uses string concatenations to stop IDEs seeing the class aliases -->
     <rule ref="Generic.Strings.UnnecessaryStringConcat">
         <exclude-pattern>tests/bootstrap.php</exclude-pattern>
     </rule>
@@ -167,7 +168,7 @@
         </properties>
     </rule>
 
-    <!--Don't hide tokenizer exceptions-->
+    <!-- Don't hide tokenizer exceptions -->
     <rule ref="Internal.Tokenizer.Exception">
         <type>error</type>
     </rule>
@@ -276,7 +277,10 @@
         <exclude-pattern>*/config/*</exclude-pattern>
     </rule>
 
-    <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly">
-        <exclude-pattern>app/Exceptions/Handler.php</exclude-pattern>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="indent" value="4"/>
+            <property name="tabIndent" value="false"/>
+        </properties>
     </rule>
 </ruleset>

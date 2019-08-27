@@ -275,4 +275,8 @@
     <rule ref="Squiz.Commenting.BlockComment">
         <exclude-pattern>*/config/*</exclude-pattern>
     </rule>
+
+    <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly">
+        <exclude-pattern>app/Exceptions/Handler.php</exclude-pattern>
+    </rule>
 </ruleset>

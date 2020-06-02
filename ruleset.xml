@@ -16,6 +16,7 @@
         <exclude name="Generic.Commenting.DocComment.MissingShort"/>
         <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSame"/>
         <exclude name="Generic.Formatting.SpaceAfterCast"/>
+        <exclude name="Generic.PHP.RequireStrictTypes.MissingDeclaration"/>
         <exclude name="PEAR.Commenting.ClassComment.Missing"/>
         <exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag"/>
         <exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag"/>
@@ -23,6 +24,7 @@
         <exclude name="PEAR.Commenting.ClassComment.MissingLinkTag"/>
         <exclude name="PEAR.Commenting.ClassComment.MissingPackageTag"/>
         <exclude name="PEAR.Commenting.FileComment.Missing"/>
+        <exclude name="PEAR.Commenting.FileComment.WrongStyle"/>
         <exclude name="PEAR.Commenting.FunctionComment.Missing"/>
         <exclude name="PEAR.Commenting.FunctionComment.MissingParamComment"/>
         <exclude name="PEAR.Commenting.FunctionComment.MissingParamTag"/>
@@ -40,14 +42,13 @@
         <exclude name="PEAR.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
         <exclude name="PEAR.WhiteSpace.ScopeIndent.Incorrect"/>
         <exclude name="PEAR.WhiteSpace.ScopeIndent.IncorrectExact"/>
-        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification"/>
-        <exclude name="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.UselessDocComment"/>
     </rule>
     <rule ref="PSR1">
         <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace">
             <exclude-pattern>*/database/migrations/*</exclude-pattern>
         </exclude>
         <exclude name="PSR1.Methods.CamelCapsMethodName"/>
+        <exclude name="PSR12.ControlStructures.ControlStructureSpacing.FirstExpressionLine"/>
     </rule>
     <rule ref="PSR2"/>
     <rule ref="Squiz">
@@ -57,10 +58,15 @@
         </exclude>
         <exclude name="Squiz.Arrays.ArrayDeclaration.MultiLineNotAllowed"/>
         <exclude name="Squiz.Arrays.ArrayDeclaration.SingleLineNotAllowed"/>
+        <exclude name="Squiz.Commenting.BlockComment.FirstLineIndent"/>
+        <exclude name="Squiz.Commenting.BlockComment.HasEmptyLineBefore"/>
+        <exclude name="Squiz.Commenting.BlockComment.LineIndent"/>
+        <exclude name="Squiz.Commenting.BlockComment.NoEmptyLineAfter"/>
         <exclude name="Squiz.Commenting.ClassComment.Missing"/>
         <exclude name="Squiz.Commenting.ClassComment.TagNotAllowed"/>
         <exclude name="Squiz.Commenting.ClosingDeclarationComment.Missing"/>
         <exclude name="Squiz.Commenting.FileComment.Missing"/>
+        <exclude name="Squiz.Commenting.FileComment.WrongStyle"/>
         <exclude name="Squiz.Commenting.FunctionComment.EmptyThrows"/>
         <exclude name="Squiz.Commenting.FunctionComment.IncorrectParamVarName"/>
         <exclude name="Squiz.Commenting.FunctionComment.InvalidReturn"/>
@@ -69,6 +75,7 @@
         <exclude name="Squiz.Commenting.InlineComment.SpacingAfter"/>
         <exclude name="Squiz.Commenting.LongConditionClosingComment.Missing"/>
         <exclude name="Squiz.Commenting.VariableComment.IncorrectVarType"/>
+        <exclude name="Squiz.Commenting.VariableComment.Missing"/>
         <exclude name="Squiz.ControlStructures.InlineIfDeclaration.NoBrackets"/>
         <exclude name="Squiz.ControlStructures.InlineIfDeclaration.NotSingleLine"/>
         <exclude name="Squiz.ControlStructures.SwitchDeclaration.BreakIndent"/>
@@ -82,6 +89,7 @@
         <exclude name="Squiz.Objects.ObjectInstantiation.NotAssigned"/>
         <exclude name="Squiz.Operators.ComparisonOperatorUsage.ImplicitTrue"/>
         <exclude name="Squiz.Operators.ComparisonOperatorUsage.NotAllowed"/>
+        <exclude name="Squiz.PHP.CommentedOutCode.Found"/>
         <exclude name="Squiz.PHP.DisallowBooleanStatement.Found"/>
         <exclude name="Squiz.PHP.DisallowComparisonAssignment.AssignedComparison"/>
         <exclude name="Squiz.PHP.DisallowInlineIf"/>
@@ -90,6 +98,7 @@
         <exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace.SpacingBeforeClose"/>
         <exclude name="Squiz.WhiteSpace.FunctionSpacing.After"/>
         <exclude name="Squiz.WhiteSpace.FunctionSpacing.Before"/>
+        <exclude name="Squiz.WhiteSpace.MemberVarSpacing.Incorrect"/>
         <exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing.Before"/>
     </rule>
 
@@ -147,6 +156,7 @@
     <rule ref="SlevomatCodingStandard.Variables.UselessVariable"/>
     <rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
     <rule ref="Squiz.Commenting.FunctionComment.IncorrectTypeHint"/>
+    <rule ref="Squiz.Commenting.VariableComment.Missing"/>
     <rule ref="Squiz.ControlStructures.ElseIfDeclaration"/>
     <rule ref="Squiz.Operators.IncrementDecrementUsage"/>
     <rule ref="Squiz.Strings.DoubleQuoteUsage"/>
@@ -303,5 +313,31 @@
             <property name="indent" value="4"/>
             <property name="tabIndent" value="false"/>
         </properties>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableParameterTypeHintSpecification">
+        <type>warning</type>
+        <!--TODO: remove-->
+        <severity>0</severity>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversableReturnTypeHintSpecification">
+        <type>warning</type>
+        <!--TODO: remove-->
+        <severity>0</severity>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingTraversablePropertyTypeHintSpecification">
+        <type>warning</type>
+        <!--TODO: remove-->
+        <severity>0</severity>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly.ReferencedGeneralException">
+        <type>warning</type>
+    </rule>
+
+    <rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration.MissingParameterTypeHint">
+        <type>warning</type>
     </rule>
 </ruleset>
